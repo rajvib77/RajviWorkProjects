@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Welcome to Guitar Center</title>
+	<script src="js/ang.js"></script>
+	<script src="js/route.js"></script>
+	<script src="js/app.js"></script>
+  	<script src="js/guitar.js"></script>
+  	<script src="js/order_purchase.js"></script>
+  	<script src="js/confirmation.js"></script>
+  	<script src="js/service/shared_guitar.js"></script>
+  	<script src="js/service/shared_guitar_payment.js"></script>
+  	<script src="js/filter/shipping_charge.js"></script>
+  	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<style>
+  	ul
+	{
+		list-style:none;		
+	}
+	ul li
+	{
+		background-color:#f1baa7;
+		width:190px;
+		height:50px;
+		display: block inline;
+		text-align:center;
+		padding-top: 8px;
+		line-height:30px;
+		float:left;
+		border-radius: 5px;
+		margin: 1px;
+		position:relative;
+		
+	}
+	ul li a
+	{
+		text-decoration:none;
+		color:white;
+		display:block;
+
+	}
+	 ul li a:hover
+	{
+		display:block;
+		background:#cda598;
+		border-radius: 5px;
+	}
+	ul ul 
+	{
+		display:none;
+		position:absolute;
+	}
+	 ul li:hover ul
+	{
+		display:block;
+	}
+
+	.button 
+	{
+	  display: inline-block;
+	  padding: 15px 25px;
+	  font-size: 17px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #f4511e;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 9px #999;
+	}
+
+	.button:hover 
+	{
+		background-color: #3e8e41
+	}
+
+	.button:active 
+	{
+	  background-color: #3e8e41;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+	.blur 
+	{
+		-webkit-filter: blur(4px);
+		filter: blur(4px);
+	}
+  	</style>
+  	
+</head>
+<body ng-app="guitar_center">
+	<div style="background-image: url('images/guitar.png'); height:830px; width:1400px; background-size: 100% 100%; background-repeat: no-repeat;">
+		<nav class="navbar navbar-default">
+	    	<ul class="nav navbar-nav">
+			    <li><a href="#guitar">Guitar</a>
+			    	<ul> <li><a href="#guitar">Electric Guitars</a></li><li><a href="#">Acoustic Guitars</a></li> <li><a href="#">Acoustic-Electric Guitars </a></li> <li><a href="#">Classical Guitars</a></li> </ul>
+			    </li>
+			    <li><a href="#">Bass</a></li>
+			    <li><a href="#">Drum</a></li>
+			    <li><a href="#">Keyboards</a></li>
+			    <li><a href="#">Dj & Lighting</a></li>
+			    <li><a href="#">Used Gear</a></li>
+			    <li><a href="#">Clearance</a></li>
+	    	</ul>
+		</nav>
+		<div ng-view></div>
+	
+		</div>
+</body>
+</html>

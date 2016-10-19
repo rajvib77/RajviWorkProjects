@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Purchase</title>
+	<style>
+		input.ng-invalid.ng-dirty{border: 1px solid red;}
+	</style>
+</head>
+<body>
+<center><h2 style="color:aqua;"><b>Order Purchase Page</b></h2></center>
+	<center>
+	<div align="center">
+		<img style="width:450px; height:160px; margin:left:30px; border: 5px solid yellow; border-style: outset; float:left;" src= "images/{{guitar_object.image_path}}">
+		<div style="width:700px; color:white;">{{guitar_object.product_description}}</div>
+	</div>
+	</br></br>
+	<div id="cust_info" style=" height:200px;  clear: both">
+		<center>
+		<span><h4 style="color:aqua;"> PURCHASE FORM </h4></span>
+		</center>
+		<form name="frm">
+		    <table>
+		    <center>
+		    <tr>
+			    <td><label for="fname" style="color:white;">First Name :</label></td>
+			    <td><input type="text" name="fname" ng-model="fname" required></td>
+			    <td ng-show="frm.fname.$dirty && frm.fname.$error.required " style="color:white;">Required!</td>
+		   	</tr>		    
+		    <tr>
+			    <td><label for="lname" style="color:white;">Last Name :</label></td>
+			    <td><input type="text" name="lname" ng-model="lname"> <br></td>
+		    </tr>
+		    <tr> 
+		    	<td><label for=add style="color:white;">Address :</label></td>
+		    	<td><input type="text" name="addr" ng-model="addr"><br></td>
+
+		    <tr>
+			    <td><label for="email" style="color:white;">Email :</label></td>
+			    <td><input type="email" name="email" ng-model="email" required></td> 
+			    <td ng-show="frm.email.$dirty && frm.email.$error.required" style="color:white;">Required!</td>
+			    <td ng-show="frm.email.$dirty && frm.email.$error.email" style="color:white;">Not valid email</td>
+		    </tr>
+
+		    <tr>
+		   		<td><label for="contact" style="color:white;">Contact :</label></td>
+			    <td><input type="number" name="contact" ng-model="contact" required ng-minlength="5" ng-maxlength="10" /></td>
+			    <td ng-show="frm.contact.$dirty && frm.contact.$error.required" style="color:white;">Required!</td>
+			    <td ng-show="frm.contact.$dirty && frm.contact.$error.minlength" style="color:white;">Please enter atleast 10 digits</td>
+			    <td ng-show="frm.contact.$dirty && frm.contact.$error.maxlength" style="color:white;">No. exceeds the limit</td></br>
+		    </tr>
+		    </center>
+		    </table>
+		</form>
+	</div>
+	<button type="button" class="btn btn-primary btn-md" ng-click="preview()" ng-disabled="frm.$invalid" >Go to Review</button><br><br>
+
+	<div style="border-style:solid; height:200px; width:200px; color:white;">
+		<div ng-show="prev">
+			<label for="fname">First Name:</label>{{fname}} <br>
+			<label for="lname">Last Name:</label>{{lname}} <br>
+			<label for="email">Address:</label>{{addr}} <br>
+			<label for="email">Email:</label>{{email}} <br>
+			<label for="contact">Contact:</label>{{contact}} <br>		
+		</div>
+		<button type="button" class="btn btn-primary btn-md" style="margin-right:10px;" ng-click="buy_guitar()">Buy</button>
+	</div>
+	</center>
+</body>
+</html>
